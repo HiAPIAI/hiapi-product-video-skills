@@ -1,0 +1,9 @@
+{
+  "name": "hiapi-fashion-lookbook-video-skill",
+  "version": "0.1.1",
+  "private": true,
+  "type": "module",
+  "description": "Compatibility installer for the HiAPI Product Video Skills monorepo",
+  "bin": { "hiapi-fashion-lookbook-video-skill": "./scripts/install.mjs" },
+  "engines": { "node": ">=18" }
+}

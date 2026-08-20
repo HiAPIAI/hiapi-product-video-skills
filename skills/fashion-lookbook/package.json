@@ -1,0 +1,32 @@
+{
+  "name": "hiapi-fashion-lookbook-video-skill",
+  "version": "0.1.0",
+  "description": "HiAPI skill for short single-shot runway, outfit-transition, lookbook, and fashion showcase videos",
+  "type": "module",
+  "private": true,
+  "homepage": "https://github.com/HiAPIAI/hiapi-fashion-lookbook-video-skill",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HiAPIAI/hiapi-fashion-lookbook-video-skill.git"
+  },
+  "bin": {
+    "hiapi-fashion-lookbook-video-skill": "./scripts/install.mjs"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check": "node --check scripts/install.mjs && node --check scripts/hiapi-fashion-lookbook-video.mjs && npm test"
+  },
+  "keywords": [
+    "hiapi",
+    "fashion-video",
+    "lookbook-video",
+    "outfit-change",
+    "runway-video",
+    "video-generation",
+    "agent-skill"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}

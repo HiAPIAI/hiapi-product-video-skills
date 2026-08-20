@@ -1,0 +1,9 @@
+{
+  "name": "hiapi-product-spokesperson-video-skill",
+  "version": "0.1.1",
+  "private": true,
+  "type": "module",
+  "description": "Compatibility installer for the HiAPI Product Video Skills monorepo",
+  "bin": { "hiapi-product-spokesperson-video-skill": "./scripts/install.mjs" },
+  "engines": { "node": ">=18" }
+}

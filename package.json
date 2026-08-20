@@ -8,6 +8,14 @@
     "node": ">=18"
   },
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "check": "node --check scripts/install.mjs && node --check scripts/legacy-cli.mjs && node --check packages/task-runner/interface.draft.mjs"
+  },
+  "bin": {
+    "hiapi-product-video-skills": "./scripts/install.mjs",
+    "hiapi-seedance-2-0-ugc-ad-video-skill": "./scripts/install.mjs",
+    "hiapi-fashion-lookbook-video-skill": "./scripts/install.mjs",
+    "hiapi-food-commercial-video-skill": "./scripts/install.mjs",
+    "hiapi-product-spokesperson-video-skill": "./scripts/install.mjs"
   }
 }

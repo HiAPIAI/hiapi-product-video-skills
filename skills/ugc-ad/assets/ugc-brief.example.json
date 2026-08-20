@@ -1,0 +1,73 @@
+{
+  "campaign_id": "demo-desk-lamp-ugc",
+  "variant_id": "hook-a",
+  "product": {
+    "name": "Demo Desk Lamp",
+    "category": "consumer-electronics",
+    "url": "https://example.com/demo-desk-lamp",
+    "image_urls": [
+      "https://example.com/demo-desk-lamp.png"
+    ],
+    "facts": [
+      {
+        "claim": "The demo lamp has three brightness levels.",
+        "source": "User-provided demo specification"
+      },
+      {
+        "claim": "The demo lamp uses a diffused shade that softens direct light.",
+        "source": "User-provided demo specification"
+      }
+    ],
+    "forbidden_claims": [
+      "Do not claim medical or eye-health benefits."
+    ]
+  },
+  "creative": {
+    "platforms": [
+      "tiktok",
+      "instagram-reels"
+    ],
+    "format": "direct-to-camera-demo",
+    "language": "en-US",
+    "duration_seconds": 10,
+    "aspect_ratio": "9:16",
+    "resolution": "720p",
+    "hook": "This fixed my late-night setup",
+    "hook_overlay": "Better desk light",
+    "script": "Okay, this little desk lamp fixed my late-night setup. Three brightness levels, and the diffused shade softens the light. Tap to see the details.",
+    "cta": "Tap to see the details.",
+    "disclosure": "AI-generated actor; confirm current platform disclosure rules before publishing.",
+    "seedance_prompt": "Create a 10-second vertical 9:16 creator-style product demo in one uninterrupted handheld phone shot. Use reference image 1 as the approved synthetic actor and reference image 2 as the exact Demo Desk Lamp. [0-1.5s] Start mid-thought with relaxed eye contact and the lamp already visible beside the actor. [1.5-4s] The actor naturally reaches to the lamp and changes one brightness level. [4-8s] Keep the exact lamp shape, shade, colors, and controls unchanged while the softer light is visibly demonstrated on the desk. [8-10s] The actor returns eye contact, gives a small nod, and finishes the CTA. Exact natural dialogue: \"Okay, this little desk lamp fixed my late-night setup. Three brightness levels, and the diffused shade softens the light. Tap to see the details.\" Phone-camera realism, ordinary home desk, natural room light, mild autofocus breathing, real skin texture, subtle hand movement, intelligible English dialogue, quiet room tone and an accurate button click. No cuts, no beauty filter, no face drift, no extra fingers, no duplicate product, no lamp or label mutation, no invented text, no captions, no watermark, no unrelated logo."
+  },
+  "talent": {
+    "source": "synthetic-generic",
+    "consent_confirmed": false,
+    "description": "Adult creator in casual home-office clothing; do not resemble a public figure.",
+    "image_urls": [
+      "https://example.com/demo-synthetic-actor.png"
+    ]
+  },
+  "production": {
+    "mode": "multimodal-reference",
+    "reference_image_urls": [
+      "https://example.com/demo-synthetic-actor.png",
+      "https://example.com/demo-desk-lamp.png"
+    ],
+    "reference_image_paths": [],
+    "reference_video_urls": [],
+    "reference_video_paths": [],
+    "reference_video_durations": [],
+    "reference_audio_urls": [],
+    "reference_audio_paths": [],
+    "reference_audio_durations": [],
+    "generate_audio": true,
+    "output_dir": "./outputs",
+    "storage": "temp",
+    "persistent_storage_confirmed": false
+  },
+  "compliance_review": {
+    "required": false,
+    "status": "not-required",
+    "notes": "Demo product only."
+  }
+}

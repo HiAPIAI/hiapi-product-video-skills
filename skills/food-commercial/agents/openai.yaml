@@ -1,0 +1,7 @@
+interface:
+  display_name: "HiAPI Food Commercial Video"
+  short_description: "Generate appetizing food and beverage ad videos"
+  default_prompt: "Use $hiapi-food-commercial-video to create a short single-shot food or beverage commercial."
+
+policy:
+  allow_implicit_invocation: true

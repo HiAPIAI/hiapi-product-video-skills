@@ -1,7 +1,7 @@
 {
   "$schema": "./docs/manifest.schema.json",
   "schemaVersion": 1,
-  "status": "compatibility-preview",
+  "status": "compatibility-release-candidate",
   "repository": "https://github.com/HiAPIAI/hiapi-product-video-skills",
   "runner": {
     "package": "@hiapi/product-video-task-runner",
@@ -30,8 +30,9 @@
         "installCommand": "npx -y github:HiAPIAI/hiapi-seedance-2-0-ugc-ad-video-skill -y",
         "targetCommand": "npx -y github:HiAPIAI/hiapi-product-video-skills -y",
         "wrapper": {
-          "status": "planned",
+          "status": "implemented",
           "path": "compat/hiapi-seedance-2-0-ugc-ad-video-skill",
+          "legacyCli": "compat/hiapi-seedance-2-0-ugc-ad-video-skill/scripts/legacy-cli.mjs",
           "test": "tests/legacy-wrapper-contract.test.mjs"
         }
       }
@@ -57,8 +58,9 @@
         "installCommand": "npx -y github:HiAPIAI/hiapi-fashion-lookbook-video-skill -y",
         "targetCommand": "npx -y github:HiAPIAI/hiapi-product-video-skills -y",
         "wrapper": {
-          "status": "planned",
+          "status": "implemented",
           "path": "compat/hiapi-fashion-lookbook-video-skill",
+          "legacyCli": "compat/hiapi-fashion-lookbook-video-skill/scripts/legacy-cli.mjs",
           "test": "tests/legacy-wrapper-contract.test.mjs"
         }
       }
@@ -84,8 +86,9 @@
         "installCommand": "npx -y github:HiAPIAI/hiapi-food-commercial-video-skill -y",
         "targetCommand": "npx -y github:HiAPIAI/hiapi-product-video-skills -y",
         "wrapper": {
-          "status": "planned",
+          "status": "implemented",
           "path": "compat/hiapi-food-commercial-video-skill",
+          "legacyCli": "compat/hiapi-food-commercial-video-skill/scripts/legacy-cli.mjs",
           "test": "tests/legacy-wrapper-contract.test.mjs"
         }
       }
@@ -111,8 +114,9 @@
         "installCommand": "npx -y github:HiAPIAI/hiapi-product-spokesperson-video-skill -y",
         "targetCommand": "npx -y github:HiAPIAI/hiapi-product-video-skills -y",
         "wrapper": {
-          "status": "planned",
+          "status": "implemented",
           "path": "compat/hiapi-product-spokesperson-video-skill",
+          "legacyCli": "compat/hiapi-product-spokesperson-video-skill/scripts/legacy-cli.mjs",
           "test": "tests/legacy-wrapper-contract.test.mjs"
         }
       }

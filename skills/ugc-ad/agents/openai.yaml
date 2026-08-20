@@ -1,0 +1,4 @@
+interface:
+  display_name: "HiAPI Seedance 2.0 UGC 广告"
+  short_description: "生成 TikTok/Reels 风格真人 UGC 产品广告"
+  default_prompt: "Use $hiapi-seedance-2-0-ugc-ad-video-skill to turn this product brief into a grounded vertical UGC ad."

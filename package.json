@@ -1,0 +1,13 @@
+{
+  "name": "hiapi-product-video-skills",
+  "version": "0.0.0-draft",
+  "private": false,
+  "type": "module",
+  "description": "Draft monorepo boundary for four HiAPI product-video agent Skills",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test"
+  }
+}

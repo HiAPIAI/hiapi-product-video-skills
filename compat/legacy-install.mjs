@@ -9,6 +9,7 @@ import { argv, env, exit, stdin, stdout } from "node:process";
 import readline from "node:readline/promises";
 
 const MONOREPO_URL = "https://github.com/HiAPIAI/hiapi-product-video-skills.git";
+const BASE_SKILL_REPO = "https://github.com/HiAPIAI/hiapi-seedance-2-0-video-skill.git";
 
 function value(args, names) {
   for (const name of names) {
@@ -67,6 +68,21 @@ async function swap(destination, staging, backup) {
   }
 }
 
+async function ensureSeedanceBaseSkill(adapterId, targetDir) {
+  if (adapterId !== "ugc-ad") return;
+  const candidates = ["hiapi-seedance-2-0-video-skill", "hiapi-seedance-2-0-video"];
+  if (candidates.some((folder) => existsSync(join(targetDir, folder, "scripts/lib/seedance-2-video.mjs")))) return;
+  if (env.HIAPI_SKIP_BASE_SKILL === "1") return;
+  const override = env.HIAPI_SEEDANCE_SKILL_DIR?.trim();
+  if (override && existsSync(join(resolve(override), "scripts/lib/seedance-2-video.mjs"))) {
+    await cp(resolve(override), join(targetDir, candidates[0]), { recursive: true, force: true });
+    return;
+  }
+  const destination = join(targetDir, candidates[0]);
+  if (existsSync(destination)) await rm(destination, { recursive: true, force: true });
+  execFileSync("git", ["clone", "--depth", "1", BASE_SKILL_REPO, destination], { stdio: "inherit" });
+}
+
 function materializeSource(source) {
   if (source && existsSync(resolve(source))) return { root: resolve(source), cleanup: async () => {} };
   const checkout = join(tmpdir(), `hiapi-product-video-skills-${process.pid}-${Date.now()}`);
@@ -95,6 +111,7 @@ export async function runLegacyInstaller(config, args = argv.slice(2)) {
       try {
         await cp(adapterSource, staging, { recursive: true, force: true });
         const preserved = await preserve(destination, staging);
+        await ensureSeedanceBaseSkill(config.adapterId, target.dir);
         await swap(destination, staging, backup);
         results.push({ destination, preserved });
       } finally {

@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-import { cp, mkdir, readdir, readFile, rename, rm, stat } from "node:fs/promises";
+import { cp, mkdir, readdir, rename, rm, stat } from "node:fs/promises";
 import { existsSync } from "node:fs";
+import { execFileSync } from "node:child_process";
 import { homedir, tmpdir } from "node:os";
 import { basename, dirname, join, resolve } from "node:path";
 import { argv, env, exit, stdin, stdout } from "node:process";
@@ -11,6 +12,7 @@ import readline from "node:readline/promises";
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const DISPLAY_NAME = "HiAPI Product Video Skills";
 const API_KEY_PAGE = "https://www.hiapi.ai/en/dashboard/api-keys";
+const BASE_SKILL_REPO = "https://github.com/HiAPIAI/hiapi-seedance-2-0-video-skill.git";
 
 const ADAPTERS = Object.freeze({
   "ugc-ad": {
@@ -171,12 +173,27 @@ export async function installAdapter(adapterId, targetDir, { sourceRoot = ROOT }
   try {
     await cp(source, staging, { recursive: true, force: true, filter: (name) => !name.includes(`${join("assets", "examples")}/`) });
     const preserved = await preserveLocalState(destination, staging);
+    if (adapterId === "ugc-ad") await ensureSeedanceBaseSkill(targetDir);
     await replaceInstall(destination, staging, backup);
     return { adapter: adapterId, destination, preserved };
   } finally {
     if (existsSync(staging)) await rm(staging, { recursive: true, force: true }).catch(() => {});
     if (existsSync(backup)) await rm(backup, { recursive: true, force: true }).catch(() => {});
   }
+}
+
+async function ensureSeedanceBaseSkill(targetDir) {
+  const candidates = ["hiapi-seedance-2-0-video-skill", "hiapi-seedance-2-0-video"];
+  if (candidates.some((folder) => existsSync(join(targetDir, folder, "scripts/lib/seedance-2-video.mjs")))) return;
+  if (env.HIAPI_SKIP_BASE_SKILL === "1") return;
+  const override = env.HIAPI_SEEDANCE_SKILL_DIR?.trim();
+  if (override && existsSync(join(resolve(override), "scripts/lib/seedance-2-video.mjs"))) {
+    await cp(resolve(override), join(targetDir, candidates[0]), { recursive: true, force: true });
+    return;
+  }
+  const destination = join(targetDir, candidates[0]);
+  if (existsSync(destination)) await rm(destination, { recursive: true, force: true });
+  execFileSync("git", ["clone", "--depth", "1", BASE_SKILL_REPO, destination], { stdio: "inherit" });
 }
 
 export async function install(options, targets, deps = {}) {

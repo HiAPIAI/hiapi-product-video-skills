@@ -61,7 +61,7 @@ test("each legacy compatibility package installs from a local unified checkout",
       const script = join("compat", repository, "scripts", "install.mjs");
       const { stdout } = await execFileAsync(process.execPath, [script, "--yes", `--target=${target}`], {
         cwd: new URL("..", import.meta.url),
-        env: { ...process.env, HIAPI_PRODUCT_VIDEO_SKILLS_REPO: new URL("..", import.meta.url).pathname },
+        env: { ...process.env, HIAPI_PRODUCT_VIDEO_SKILLS_REPO: new URL("..", import.meta.url).pathname, HIAPI_SKIP_BASE_SKILL: "1" },
       });
       assert.match(stdout, /Installed/);
       await access(join(target, folder, "SKILL.md"));

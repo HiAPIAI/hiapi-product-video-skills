@@ -1,6 +1,6 @@
 # hiapi-product-video-skills
 
-This monorepo consolidates four focused product-video Skills behind one shared
+This public preview defines the monorepo contract for four focused product-video Skills behind one shared
 task runner. The former repositories remain available as archived compatibility
 pages while users migrate to the scoped adapters here.
 
@@ -27,8 +27,11 @@ live price estimation, explicit spend approval, request hashing,
 idempotency, safe retries, polling, output download, redaction, and artifact
 packaging.
 
-The first release keeps the legacy wrapper contract explicit. Each adapter must
-pass its parity fixture before the old repository is archived.
+The current release publishes the shared manifest, safety contracts, and legacy
+wrapper tests. The original four CLIs are still the production implementations;
+each adapter must pass its parity fixture before its old repository is archived.
+
+Status: `compatibility-preview`, not yet the default production installer.
 
 ## Current adapters
 

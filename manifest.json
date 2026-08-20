@@ -1,7 +1,7 @@
 {
   "$schema": "./docs/manifest.schema.json",
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "compatibility-preview",
   "repository": "https://github.com/HiAPIAI/hiapi-product-video-skills",
   "runner": {
     "package": "@hiapi/product-video-task-runner",

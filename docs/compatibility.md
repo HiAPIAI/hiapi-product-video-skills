@@ -16,9 +16,10 @@ therefore needs a compatibility commit before it is archived.
 
 The exact old install commands are recorded in `manifest.json` under
 `adapters[].legacy.installCommand`. They remain valid during the compatibility
-window. The future monorepo command is recorded as `targetCommand`, but it is
-not a replacement until the shared runner and the adapter parity fixtures are
-released. Do not publish a README that tells users to rely on a GitHub rename
+window. The future monorepo command is recorded as `targetCommand` with an
+explicit adapter ID, so it installs the same focused Skill as the old command.
+It is not a replacement until the shared runner and the adapter parity fixtures
+are released. Do not publish a README that tells users to rely on a GitHub rename
 or silently rewrites an old `npx github:<repo>` command.
 
 Each adapter also has an explicit `aliases` object. These are stable lookup

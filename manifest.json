@@ -28,7 +28,7 @@
         "bin": "hiapi-seedance-2-0-ugc-ad-video-skill",
         "installFolder": "hiapi-seedance-2-0-ugc-ad-video-skill",
         "installCommand": "npx -y github:HiAPIAI/hiapi-seedance-2-0-ugc-ad-video-skill -y",
-        "targetCommand": "npx -y github:HiAPIAI/hiapi-product-video-skills -y",
+        "targetCommand": "npx -y github:HiAPIAI/hiapi-product-video-skills -y --adapter ugc-ad",
         "wrapper": {
           "status": "implemented",
           "path": "compat/hiapi-seedance-2-0-ugc-ad-video-skill",
@@ -56,7 +56,7 @@
         "bin": "hiapi-fashion-lookbook-video-skill",
         "installFolder": "hiapi-fashion-lookbook-video",
         "installCommand": "npx -y github:HiAPIAI/hiapi-fashion-lookbook-video-skill -y",
-        "targetCommand": "npx -y github:HiAPIAI/hiapi-product-video-skills -y",
+        "targetCommand": "npx -y github:HiAPIAI/hiapi-product-video-skills -y --adapter fashion-lookbook",
         "wrapper": {
           "status": "implemented",
           "path": "compat/hiapi-fashion-lookbook-video-skill",
@@ -84,7 +84,7 @@
         "bin": "hiapi-food-commercial-video-skill",
         "installFolder": "hiapi-food-commercial-video",
         "installCommand": "npx -y github:HiAPIAI/hiapi-food-commercial-video-skill -y",
-        "targetCommand": "npx -y github:HiAPIAI/hiapi-product-video-skills -y",
+        "targetCommand": "npx -y github:HiAPIAI/hiapi-product-video-skills -y --adapter food-commercial",
         "wrapper": {
           "status": "implemented",
           "path": "compat/hiapi-food-commercial-video-skill",
@@ -112,7 +112,7 @@
         "bin": "hiapi-product-spokesperson-video-skill",
         "installFolder": "hiapi-product-spokesperson-video",
         "installCommand": "npx -y github:HiAPIAI/hiapi-product-spokesperson-video-skill -y",
-        "targetCommand": "npx -y github:HiAPIAI/hiapi-product-video-skills -y",
+        "targetCommand": "npx -y github:HiAPIAI/hiapi-product-video-skills -y --adapter product-spokesperson",
         "wrapper": {
           "status": "implemented",
           "path": "compat/hiapi-product-spokesperson-video-skill",

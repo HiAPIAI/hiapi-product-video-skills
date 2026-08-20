@@ -1,0 +1,31 @@
+{
+  "name": "hiapi-product-spokesperson-video-skill",
+  "version": "0.1.0",
+  "description": "HiAPI product spokesperson and brand video generation skill for AI agents",
+  "private": true,
+  "type": "module",
+  "homepage": "https://github.com/HiAPIAI/hiapi-product-spokesperson-video-skill#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HiAPIAI/hiapi-product-spokesperson-video-skill.git"
+  },
+  "bin": {
+    "hiapi-product-spokesperson-video-skill": "./scripts/install.mjs"
+  },
+  "scripts": {
+    "test": "node --test tests/cli.test.mjs"
+  },
+  "keywords": [
+    "hiapi",
+    "product-video",
+    "spokesperson-video",
+    "talking-head",
+    "brand-video",
+    "ai-agent",
+    "skill"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}

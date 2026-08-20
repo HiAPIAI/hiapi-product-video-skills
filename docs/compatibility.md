@@ -28,7 +28,8 @@ compatibility window ends.
 
 ## Compatibility repository shape
 
-After migration, each old repository should contain only:
+The unified repository now ships a reference wrapper under `compat/<old-repo>`
+with this shape:
 
 ```text
 package.json             # old private package name and version line
@@ -38,6 +39,12 @@ scripts/install.mjs      # old flags; stages/copies the new adapter
 scripts/legacy-cli.mjs   # forwards old CLI flags to the adapter
 tests/compatibility.test.mjs
 ```
+
+The wrapper source uses a staged copy and atomic directory swap. It preserves
+`.env`, `.env.*`, and `outputs/` from an existing install, and restores the old
+directory if cloning or copying the new adapter fails. The four reference
+wrappers are exercised by `tests/monorepo-installer.test.mjs`; the old GitHub
+repositories must receive the same files before they are archived.
 
 The wrapper must preserve old flags and output JSON fields. It may clone a
 tagged monorepo release, copy the adapter into the old Skill folder, and then

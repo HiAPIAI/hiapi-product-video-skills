@@ -1,0 +1,29 @@
+{
+  "name": "hiapi-food-commercial-video-skill",
+  "version": "0.1.0",
+  "description": "HiAPI skill for short single-shot food and beverage commercials",
+  "type": "module",
+  "private": true,
+  "homepage": "https://github.com/HiAPIAI/hiapi-food-commercial-video-skill#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HiAPIAI/hiapi-food-commercial-video-skill.git"
+  },
+  "bin": {
+    "hiapi-food-commercial-video-skill": "./scripts/install.mjs"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  },
+  "keywords": [
+    "hiapi",
+    "food-commercial",
+    "beverage-video",
+    "video-generation",
+    "agent-skill"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}

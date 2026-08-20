@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
 const manifest = JSON.parse(
@@ -50,6 +50,15 @@ test("legacy install commands are explicit and are not rename redirects", () => 
     assert.notEqual(legacy.installCommand, legacy.targetCommand,
       `${adapter.id}: old and target commands must not be conflated`);
     assert.deepEqual(legacy.wrapper.test, "tests/legacy-wrapper-contract.test.mjs");
+    assert.equal(legacy.wrapper.status, "implemented");
+  }
+});
+
+test("implemented wrappers and adapter sources exist in the monorepo", async () => {
+  for (const adapter of manifest.adapters) {
+    await access(new URL(`../${adapter.source}/SKILL.md`, import.meta.url));
+    await access(new URL(`../${adapter.legacy.wrapper.path}/scripts/install.mjs`, import.meta.url));
+    await access(new URL(`../${adapter.legacy.wrapper.path}/scripts/legacy-cli.mjs`, import.meta.url));
   }
 });
 

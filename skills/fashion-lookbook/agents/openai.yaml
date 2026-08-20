@@ -1,0 +1,4 @@
+interface:
+  display_name: "HiAPI Fashion Lookbook Video"
+  short_description: "Create runway, lookbook, outfit-change, and fashion videos"
+  default_prompt: "Use $hiapi-fashion-lookbook-video to plan and preview a vertical lookbook video from my authorized person and garment images."

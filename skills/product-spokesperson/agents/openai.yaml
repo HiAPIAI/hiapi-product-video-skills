@@ -1,0 +1,7 @@
+interface:
+  display_name: "HiAPI Product Spokesperson Video"
+  short_description: "Generate product, brand, and spokesperson videos"
+  default_prompt: "Use $hiapi-product-spokesperson-video to validate my local assets and estimate a short product video without spending yet."
+
+policy:
+  allow_implicit_invocation: true

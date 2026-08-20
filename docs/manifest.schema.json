@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schemaVersion", "status", "repository", "runner", "adapters"],
+  "properties": {
+    "schemaVersion": { "type": "integer", "minimum": 1 },
+    "status": { "enum": ["draft", "active", "deprecated"] },
+    "repository": { "type": "string", "format": "uri" },
+    "runner": {
+      "type": "object",
+      "required": ["package", "source", "apiContract"],
+      "properties": {
+        "package": { "type": "string" },
+        "source": { "type": "string" },
+        "apiContract": { "type": "string" }
+      }
+    },
+    "adapters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "sourceRepository", "skillName", "source", "models", "aliases", "legacy"],
+        "properties": {
+          "id": { "type": "string" },
+          "sourceRepository": { "type": "string" },
+          "skillName": { "type": "string" },
+          "source": { "type": "string" },
+          "models": { "type": "array", "items": { "type": "string" } },
+          "capabilities": { "type": "array", "items": { "type": "string" } },
+          "aliases": {
+            "type": "object",
+            "required": ["adapter", "skill", "package", "bin"],
+            "properties": {
+              "adapter": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+              "skill": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+              "package": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+              "bin": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+            },
+            "additionalProperties": false
+          },
+          "legacy": {
+            "type": "object",
+            "required": ["repository", "package", "bin", "installFolder", "installCommand", "targetCommand", "wrapper"],
+            "properties": {
+              "repository": { "type": "string", "format": "uri" },
+              "package": { "type": "string" },
+              "bin": { "type": "string" },
+              "installFolder": { "type": "string" },
+              "installCommand": { "type": "string", "pattern": "^npx -y github:HiAPIAI/" },
+              "targetCommand": { "type": "string", "pattern": "^npx -y github:HiAPIAI/hiapi-product-video-skills" },
+              "wrapper": {
+                "type": "object",
+                "required": ["status", "path", "test"],
+                "properties": {
+                  "status": { "enum": ["planned", "ready", "verified", "deprecated"] },
+                  "path": { "type": "string" },
+                  "test": { "type": "string" }
+                },
+                "additionalProperties": false
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "$schema": "./docs/manifest.schema.json",
+  "schemaVersion": 1,
+  "status": "draft",
+  "repository": "https://github.com/HiAPIAI/hiapi-product-video-skills",
+  "runner": {
+    "package": "@hiapi/product-video-task-runner",
+    "source": "packages/task-runner",
+    "apiContract": "/v1/tasks"
+  },
+  "adapters": [
+    {
+      "id": "ugc-ad",
+      "sourceRepository": "hiapi-seedance-2-0-ugc-ad-video-skill",
+      "skillName": "hiapi-seedance-2-0-ugc-ad-video-skill",
+      "source": "skills/ugc-ad",
+      "models": ["seedance-2.0"],
+      "capabilities": ["ugc", "claims-ledger", "talent-consent", "regulated-review"],
+      "aliases": {
+        "adapter": ["ugc-ad"],
+        "skill": ["hiapi-seedance-2-0-ugc-ad-video-skill"],
+        "package": ["hiapi-seedance-2-0-ugc-ad-video-skill"],
+        "bin": ["hiapi-seedance-2-0-ugc-ad-video-skill"]
+      },
+      "legacy": {
+        "repository": "https://github.com/HiAPIAI/hiapi-seedance-2-0-ugc-ad-video-skill",
+        "package": "hiapi-seedance-2-0-ugc-ad-video-skill",
+        "bin": "hiapi-seedance-2-0-ugc-ad-video-skill",
+        "installFolder": "hiapi-seedance-2-0-ugc-ad-video-skill",
+        "installCommand": "npx -y github:HiAPIAI/hiapi-seedance-2-0-ugc-ad-video-skill -y",
+        "targetCommand": "npx -y github:HiAPIAI/hiapi-product-video-skills -y",
+        "wrapper": {
+          "status": "planned",
+          "path": "compat/hiapi-seedance-2-0-ugc-ad-video-skill",
+          "test": "tests/legacy-wrapper-contract.test.mjs"
+        }
+      }
+    },
+    {
+      "id": "fashion-lookbook",
+      "sourceRepository": "hiapi-fashion-lookbook-video-skill",
+      "skillName": "hiapi-fashion-lookbook-video",
+      "source": "skills/fashion-lookbook",
+      "models": ["kling-3.0-omni/*", "seedance-2.0-fast"],
+      "capabilities": ["lookbook", "outfit-transition", "asset-rights", "person-consent"],
+      "aliases": {
+        "adapter": ["fashion-lookbook"],
+        "skill": ["hiapi-fashion-lookbook-video"],
+        "package": ["hiapi-fashion-lookbook-video-skill"],
+        "bin": ["hiapi-fashion-lookbook-video-skill"]
+      },
+      "legacy": {
+        "repository": "https://github.com/HiAPIAI/hiapi-fashion-lookbook-video-skill",
+        "package": "hiapi-fashion-lookbook-video-skill",
+        "bin": "hiapi-fashion-lookbook-video-skill",
+        "installFolder": "hiapi-fashion-lookbook-video",
+        "installCommand": "npx -y github:HiAPIAI/hiapi-fashion-lookbook-video-skill -y",
+        "targetCommand": "npx -y github:HiAPIAI/hiapi-product-video-skills -y",
+        "wrapper": {
+          "status": "planned",
+          "path": "compat/hiapi-fashion-lookbook-video-skill",
+          "test": "tests/legacy-wrapper-contract.test.mjs"
+        }
+      }
+    },
+    {
+      "id": "food-commercial",
+      "sourceRepository": "hiapi-food-commercial-video-skill",
+      "skillName": "hiapi-food-commercial-video",
+      "source": "skills/food-commercial",
+      "models": ["kling-3.0-omni/*", "seedance-2.0-fast"],
+      "capabilities": ["food-macro", "beverage", "product-hero", "claims-review"],
+      "aliases": {
+        "adapter": ["food-commercial"],
+        "skill": ["hiapi-food-commercial-video"],
+        "package": ["hiapi-food-commercial-video-skill"],
+        "bin": ["hiapi-food-commercial-video-skill"]
+      },
+      "legacy": {
+        "repository": "https://github.com/HiAPIAI/hiapi-food-commercial-video-skill",
+        "package": "hiapi-food-commercial-video-skill",
+        "bin": "hiapi-food-commercial-video-skill",
+        "installFolder": "hiapi-food-commercial-video",
+        "installCommand": "npx -y github:HiAPIAI/hiapi-food-commercial-video-skill -y",
+        "targetCommand": "npx -y github:HiAPIAI/hiapi-product-video-skills -y",
+        "wrapper": {
+          "status": "planned",
+          "path": "compat/hiapi-food-commercial-video-skill",
+          "test": "tests/legacy-wrapper-contract.test.mjs"
+        }
+      }
+    },
+    {
+      "id": "product-spokesperson",
+      "sourceRepository": "hiapi-product-spokesperson-video-skill",
+      "skillName": "hiapi-product-spokesperson-video",
+      "source": "skills/product-spokesperson",
+      "models": ["kling-3.0-omni/*", "seedance-2.0-fast"],
+      "capabilities": ["synthetic-spokesperson", "talking-head", "dialogue", "consent"],
+      "aliases": {
+        "adapter": ["product-spokesperson"],
+        "skill": ["hiapi-product-spokesperson-video"],
+        "package": ["hiapi-product-spokesperson-video-skill"],
+        "bin": ["hiapi-product-spokesperson-video-skill"]
+      },
+      "legacy": {
+        "repository": "https://github.com/HiAPIAI/hiapi-product-spokesperson-video-skill",
+        "package": "hiapi-product-spokesperson-video-skill",
+        "bin": "hiapi-product-spokesperson-video-skill",
+        "installFolder": "hiapi-product-spokesperson-video",
+        "installCommand": "npx -y github:HiAPIAI/hiapi-product-spokesperson-video-skill -y",
+        "targetCommand": "npx -y github:HiAPIAI/hiapi-product-video-skills -y",
+        "wrapper": {
+          "status": "planned",
+          "path": "compat/hiapi-product-spokesperson-video-skill",
+          "test": "tests/legacy-wrapper-contract.test.mjs"
+        }
+      }
+    }
+  ]
+}

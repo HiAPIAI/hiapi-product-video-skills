@@ -2,7 +2,7 @@
 
 通过 [HiAPI](https://www.hiapi.ai) 生成商品口播、品牌介绍、虚拟代言人和经授权的真人出镜广告视频。
 
-[获取 API Key](https://www.hiapi.ai/zh/register) | [价格](https://www.hiapi.ai/zh/pricing) | [HiAPI 文档](https://docs.hiapi.ai) | [全部 HiAPI Skills](https://github.com/HiAPIAI/hiapi-skills)
+[获取 API Key](https://hiapi.ai/zh/sign) | [价格](https://www.hiapi.ai/zh/pricing) | [HiAPI 文档](https://docs.hiapi.ai) | [全部 HiAPI Skills](https://github.com/HiAPIAI/hiapi-skills)
 
 语言：[English](README.md) | [简体中文](README.zh-CN.md)
 
@@ -60,6 +60,8 @@ cp -R hiapi-product-spokesperson-video-skill "${CODEX_HOME:-$HOME/.codex}/skills
 ```bash
 export HIAPI_API_KEY="your_hiapi_api_key_here"
 ```
+
+可选：设置 `HIAPI_BASE_URL` 可覆盖 API 地址（默认 `https://api.hiapi.sh`）。
 
 也可以把 Key 放入已被 Git 忽略的环境文件，再通过 `--env-file` 读取。不要提交或输出 Key。
 

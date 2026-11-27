@@ -4,7 +4,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { extname, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 
-export const BASE_URL = "https://api.hiapi.ai";
+export const BASE_URL = (process.env.HIAPI_BASE_URL || "https://api.hiapi.sh").replace(/\/+$/, "");
 export const DEFAULT_MAX_COST_USD = 0.5;
 export const MODELS = Object.freeze({
   text: "kling-3.0-omni/text-to-video",

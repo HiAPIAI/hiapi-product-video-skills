@@ -5,7 +5,7 @@ Read this file before installing or using the Skill.
 Important links:
 
 - Repository: https://github.com/HiAPIAI/hiapi-product-spokesperson-video-skill
-- Get an API key: https://www.hiapi.ai/en/register
+- Get an API key: https://hiapi.ai/en/sign
 - Pricing: https://www.hiapi.ai/en/pricing
 - HiAPI documentation: https://docs.hiapi.ai
 - HiAPI Skills directory: https://github.com/HiAPIAI/hiapi-skills

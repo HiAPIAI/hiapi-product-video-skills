@@ -59,6 +59,8 @@ git clone https://github.com/HiAPIAI/hiapi-food-commercial-video-skill.git "${CO
 export HIAPI_API_KEY="your_hiapi_api_key_here"
 ```
 
+可选：设置 `HIAPI_BASE_URL` 可覆盖 API 地址（默认 `https://api.hiapi.sh`）。
+
 也可以在环境文件中设置相同变量，但不要提交真实 API Key。
 
 检查配置且不创建付费任务：

@@ -67,7 +67,7 @@ Then set your key in the environment that launches the agent:
 
 ```bash
 export HIAPI_API_KEY="your_hiapi_api_key"
-export HIAPI_BASE_URL="https://api.hiapi.ai"
+export HIAPI_BASE_URL="https://api.hiapi.sh"
 ```
 
 Do not commit `.env` or API keys.

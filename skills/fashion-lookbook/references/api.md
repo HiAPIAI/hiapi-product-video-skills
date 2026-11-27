@@ -2,7 +2,7 @@
 
 ## Fixed Endpoints
 
-Use only `https://api.hiapi.ai`:
+Use only `https://api.hiapi.sh`:
 
 - `GET /api/pricing` for the public catalog and estimate.
 - `GET /v1/tasks?page=1&size=1` for an authenticated zero-cost check.

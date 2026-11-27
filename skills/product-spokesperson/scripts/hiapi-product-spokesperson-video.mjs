@@ -4,7 +4,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { extname, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 
-const DEFAULT_BASE_URL = "https://api.hiapi.ai";
+const DEFAULT_BASE_URL = (process.env.HIAPI_BASE_URL || "https://api.hiapi.sh").replace(/\/+$/, "");
 const DEFAULT_MAX_COST_USD = 0.5;
 const KLING_T2V = "kling-3.0-omni/text-to-video";
 const KLING_I2V = "kling-3.0-omni/image-to-video";

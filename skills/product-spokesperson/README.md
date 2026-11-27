@@ -2,7 +2,7 @@
 
 Generate short product spokesperson, brand introduction, synthetic presenter, and authorized talking-head advertising videos through [HiAPI](https://www.hiapi.ai).
 
-[Get API Key](https://www.hiapi.ai/en/register) | [Pricing](https://www.hiapi.ai/en/pricing) | [HiAPI Docs](https://docs.hiapi.ai) | [All HiAPI Skills](https://github.com/HiAPIAI/hiapi-skills)
+[Get API Key](https://hiapi.ai/en/sign) | [Pricing](https://www.hiapi.ai/en/pricing) | [HiAPI Docs](https://docs.hiapi.ai) | [All HiAPI Skills](https://github.com/HiAPIAI/hiapi-skills)
 
 Languages: [English](README.md) | [简体中文](README.zh-CN.md)
 
@@ -60,6 +60,8 @@ Set the key in the environment used by your agent:
 ```bash
 export HIAPI_API_KEY="your_hiapi_api_key_here"
 ```
+
+Optional: set `HIAPI_BASE_URL` to override the API base URL (default `https://api.hiapi.sh`).
 
 Alternatively, keep it in a Git-ignored environment file and pass `--env-file`. Never commit or print the key.
 

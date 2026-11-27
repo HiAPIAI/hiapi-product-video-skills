@@ -65,7 +65,7 @@ npx -y github:HiAPIAI/hiapi-seedance-2-0-ugc-ad-video-skill --target=/path/to/sk
 
 ```bash
 export HIAPI_API_KEY="your_hiapi_api_key"
-export HIAPI_BASE_URL="https://api.hiapi.ai"
+export HIAPI_BASE_URL="https://api.hiapi.sh"
 ```
 
 不要提交 `.env` 或 API Key。

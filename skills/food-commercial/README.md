@@ -59,6 +59,8 @@ git clone https://github.com/HiAPIAI/hiapi-food-commercial-video-skill.git "${CO
 export HIAPI_API_KEY="your_hiapi_api_key_here"
 ```
 
+Optional: set `HIAPI_BASE_URL` to override the API base URL (default `https://api.hiapi.sh`).
+
 An optional env file may contain the same variable. Never commit a real key.
 
 Check configuration without creating a paid task:
